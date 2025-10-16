@@ -1,6 +1,6 @@
 import { defineConfig } from "tinacms";
 
-// Your hosting provider likely exposes this as an environment variable
+// Preserve dynamic branch detection
 const branch =
   process.env.GITHUB_BRANCH ||
   process.env.VERCEL_GIT_COMMIT_REF ||
@@ -9,12 +9,8 @@ const branch =
 
 export default defineConfig({
   branch,
-
-  // Get this from tina.io
-  clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
-  // Get this from tina.io
-  token: process.env.TINA_TOKEN,
-
+  clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID!,
+  token: process.env.TINA_TOKEN!,
   build: {
     outputFolder: "admin",
     publicFolder: "public",
@@ -25,26 +21,54 @@ export default defineConfig({
       publicFolder: "public",
     },
   },
-  // See docs on content modeling for more info on how to setup new content models: https://tina.io/docs/r/content-modelling-collections/
   schema: {
     collections: [
       {
-        name: "post",
-        label: "Posts",
-        path: "content/posts",
+        name: "hero",
+        label: "Hero Section",
+        path: "content/hero",
+        format: "md",
         fields: [
           {
             type: "string",
-            name: "title",
-            label: "Title",
-            isTitle: true,
-            required: true,
+            label: "Headline",
+            name: "headline",
           },
           {
-            type: "rich-text",
-            name: "body",
-            label: "Body",
-            isBody: true,
+            type: "string",
+            label: "Subtext",
+            name: "subtext",
+            ui: { component: "textarea" },
+          },
+        ],
+      },
+      {
+        name: "projects",
+        label: "Projects",
+        path: "content/projects",
+        format: "md",
+        fields: [
+          {
+            type: "string",
+            label: "Project Title",
+            name: "title",
+          },
+          {
+            type: "string",
+            label: "Description",
+            name: "description",
+            ui: { component: "textarea" },
+          },
+          {
+            type: "string",
+            label: "Thinking Line",
+            name: "why",
+            ui: { component: "textarea" },
+          },
+          {
+            type: "image",
+            label: "Thumbnail",
+            name: "thumbnail",
           },
         ],
       },
