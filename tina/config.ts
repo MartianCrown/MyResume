@@ -1,4 +1,5 @@
 // sync-trigger
+// Force Tina Cloud to reindex
 import { defineConfig } from "tinacms";
 
 // Preserve dynamic branch detection
