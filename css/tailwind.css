@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary Colors */
+  --color-primary: #111827; /* gray-900 */
+  --color-secondary: #374151; /* gray-700 */
+  --color-accent: #2563EB; /* blue-600 */
+  
+  /* Background Colors */
+  --color-background: #F9FAFB; /* gray-50 */
+  --color-surface: #FFFFFF; /* white */
+  
+  /* Text Colors */
+  --color-text-primary: #111827; /* gray-900 */
+  --color-text-secondary: #6B7280; /* gray-500 */
+  
+  /* Status Colors */
+  --color-success: #059669; /* emerald-600 */
+  --color-warning: #D97706; /* amber-600 */
+  --color-error: #DC2626; /* red-600 */
+  
+  /* Border Colors */
+  --color-border: #E5E7EB; /* gray-200 */
+  
+  /* Shadow Colors */
+  --shadow-subtle: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+}
+
+@layer base {
+  body {
+    font-family: 'Inter', sans-serif;
+    color: var(--color-text-primary);
+    background-color: var(--color-background);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+  
+  code, pre {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-accent text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 ease-out hover:bg-blue-700 focus:ring-2 focus:ring-accent focus:ring-offset-2;
+  }
+  
+  .btn-secondary {
+    @apply bg-surface text-primary border border-border px-6 py-3 rounded-lg font-medium transition-all duration-200 ease-out hover:bg-gray-50 focus:ring-2 focus:ring-accent focus:ring-offset-2;
+  }
+  
+  .card {
+    @apply bg-surface rounded-lg p-6 shadow-subtle border border-border;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-accent focus:border-accent transition-all duration-200 ease-out;
+  }
+  
+  .text-accent {
+    color: var(--color-accent);
+  }
+  
+  .text-success {
+    color: var(--color-success);
+  }
+  
+  .text-warning {
+    color: var(--color-warning);
+  }
+  
+  .text-error {
+    color: var(--color-error);
+  }
+  
+  .bg-accent {
+    background-color: var(--color-accent);
+  }
+  
+  .bg-success {
+    background-color: var(--color-success);
+  }
+  
+  .bg-warning {
+    background-color: var(--color-warning);
+  }
+  
+  .bg-error {
+    background-color: var(--color-error);
+  }
+}
+
+@layer utilities {
+  .transition-smooth {
+    transition: all 200ms ease-out;
+  }
+  
+  .transition-section {
+    transition: all 300ms ease-out;
+  }
+  
+  .shadow-interactive {
+    box-shadow: var(--shadow-subtle);
+  }
+  
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}

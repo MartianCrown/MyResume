@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status Monitor - Thinking Resume</title>
+    <meta name="description" content="Real-time status tracking of ongoing projects, learning initiatives, and professional availability with live updates and transparent professional development.">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fthinkingr6051back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.9"></script>
+  <script type="module" src="https://static.rocket.new/rocket-shot.js?v=0.0.1"></script>
+  </head>
+<body class="bg-background text-text-primary">
+    <!-- Navigation Header -->
+    <nav class="fixed top-0 left-0 right-0 bg-surface/95 backdrop-blur-sm border-b border-border z-50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <svg class="w-8 h-8 text-accent" viewBox="0 0 32 32" fill="currentColor">
+                        <path d="M16 2L20 10L28 10L22 16L24 24L16 20L8 24L10 16L4 10L12 10L16 2Z"/>
+                    </svg>
+                    <span class="ml-2 text-xl font-bold text-primary">Thinking Resume</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="homepage.html" class="text-text-secondary hover:text-primary transition-smooth">Home</a>
+                    <a href="timeline.html" class="text-text-secondary hover:text-primary transition-smooth">Timeline</a>
+                    <a href="analytics_dashboard.html" class="text-text-secondary hover:text-primary transition-smooth">Analytics</a>
+                    <a href="case_studies.html" class="text-text-secondary hover:text-primary transition-smooth">Case Studies</a>
+                    <a href="status_monitor.html" class="text-primary font-medium border-b-2 border-accent pb-1">Status</a>
+                    <a href="process_philosophy.html" class="text-text-secondary hover:text-primary transition-smooth">Process</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-smooth">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden bg-surface border-t border-border">
+            <div class="px-6 py-4 space-y-3">
+                <a href="homepage.html" class="block text-text-secondary hover:text-primary transition-smooth">Home</a>
+                <a href="timeline.html" class="block text-text-secondary hover:text-primary transition-smooth">Timeline</a>
+                <a href="analytics_dashboard.html" class="block text-text-secondary hover:text-primary transition-smooth">Analytics</a>
+                <a href="case_studies.html" class="block text-text-secondary hover:text-primary transition-smooth">Case Studies</a>
+                <a href="status_monitor.html" class="block text-primary font-medium">Status</a>
+                <a href="process_philosophy.html" class="block text-text-secondary hover:text-primary transition-smooth">Process</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Status Header -->
+    <section class="pt-24 pb-8 px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
+                <div>
+                    <h1 class="text-4xl font-bold text-primary mb-4">Live Status Monitor</h1>
+                    <p class="text-lg text-text-secondary max-w-2xl">
+                        Real-time view into current projects, learning initiatives, and professional availability. 
+                        Updated continuously to reflect ongoing activities and growth.
+                    </p>
+                </div>
+                
+                <!-- Last Updated -->
+                <div class="flex items-center space-x-3 card p-4">
+                    <div class="w-3 h-3 bg-success rounded-full animate-pulse"></div>
+                    <div>
+                        <div class="text-sm font-medium text-primary">Last Updated</div>
+                        <div class="text-sm text-text-secondary">Oct 15, 2025 • 4:33 PM</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Status Overview -->
+    <section class="pb-8 px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Availability Status -->
+                <div class="card">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-12 h-12 bg-success/10 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-primary">Available</h3>
+                            <p class="text-sm text-success">Open to opportunities</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-text-secondary">
+                        Currently accepting new projects and full-time opportunities. Response time: 24 hours.
+                    </p>
+                </div>
+                
+                <!-- Current Focus -->
+                <div class="card">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-primary">Focus Mode</h3>
+                            <p class="text-sm text-accent">Deep work session</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-text-secondary">
+                        Currently in focused work mode. Best contact time: after 5 PM EST.
+                    </p>
+                </div>
+                
+                <!-- Learning Status -->
+                <div class="card">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-12 h-12 bg-warning/10 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-warning" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-primary">Learning</h3>
+                            <p class="text-sm text-warning">AI/ML for Design</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-text-secondary">
+                        Week 3 of 8 in Stanford's AI for Design course. Progress: 37% complete.
+                    </p>
+                </div>
+                
+                <!-- Energy Level -->
+                <div class="card">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-12 h-12 bg-success/10 rounded-lg flex items-center justify-center">
+                            <svg class="w-6 h-6 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-primary">Energy</h3>
+                            <p class="text-sm text-success">High</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-text-secondary">
+                        Peak creative hours. Great time for complex problem-solving and strategic discussions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Projects -->
+    <section class="py-8 px-6 lg:px-8 bg-surface">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex items-center justify-between mb-8">
+                <h2 class="text-3xl font-bold text-primary">Current Projects</h2>
+                <div class="flex items-center space-x-2 text-sm text-text-secondary">
+                    <div class="w-2 h-2 bg-success rounded-full animate-pulse"></div>
+                    <span>Live updates</span>
+                </div>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Active Project 1 -->
+                <div class="card">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-center space-x-3">
+                            <img src="https://images.unsplash.com/photo-1649424221016-58857288854e" 
+                                 alt="E-commerce platform interface showing modern shopping cart and product grid layout" 
+                                 class="w-12 h-12 rounded-lg object-cover"
+                                 onerror="this.src='https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;">
+                            <div>
+                                <h3 class="font-semibold text-primary">E-commerce Platform Redesign</h3>
+                                <p class="text-sm text-text-secondary">Discovery & Research Phase</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-2 h-2 bg-warning rounded-full"></div>
+                            <span class="text-xs text-warning font-medium">In Progress</span>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm font-medium text-primary">Progress</span>
+                                <span class="text-sm text-text-secondary">23%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-warning h-2 rounded-full" style="width: 23%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-2">
+                            <div class="flex items-center space-x-2">
+                                <svg class="w-4 h-4 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-sm text-text-secondary">User interviews completed (12/15)</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <svg class="w-4 h-4 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-sm text-text-secondary">Competitive analysis finished</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <svg class="w-4 h-4 text-warning" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span class="text-sm text-text-secondary">Journey mapping in progress</span>
+                            </div>
+                        </div>
+                        
+                        <div class="pt-2 border-t border-border">
+                            <p class="text-xs text-text-secondary">
+                                Next milestone: Persona development workshop - Oct 18, 2025
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Active Project 2 -->
+                <div class="card">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="flex items-center space-x-3">
+                            <img src="https://images.unsplash.com/photo-1672923491001-3e58a608e418" 
+                                 alt="Design system components and UI elements arranged in a systematic grid layout" 
+                                 class="w-12 h-12 rounded-lg object-cover"
+                                 onerror="this.src='https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                            <div>
+                                <h3 class="font-semibold text-primary">Design System Evolution</h3>
+                                <p class="text-sm text-text-secondary">Component Library Update</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-2 h-2 bg-accent rounded-full"></div>
+                            <span class="text-xs text-accent font-medium">Active</span>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="text-sm font-medium text-primary">Progress</span>
+                                <span class="text-sm text-text-secondary">67%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-accent h-2 rounded-full" style="width: 67%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-2">
+                            <div class="flex items-center space-x-2">
+                                <svg class="w-4 h-4 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-sm text-text-secondary">Button variants redesigned</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <svg class="w-4 h-4 text-success" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-sm text-text-secondary">Typography scale updated</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span class="text-sm text-text-secondary">Form components in review</span>
+                            </div>
+                        </div>
+                        
+                        <div class="pt-2 border-t border-border">
+                            <p class="text-xs text-text-secondary">
+                                Next milestone: Developer handoff - Oct 20, 2025
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning & Development -->
+    <section class="py-8 px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-primary mb-8">Learning & Development</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Current Course -->
+                <div class="card">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="https://images.unsplash.com/photo-1611926069989-38b9925b1c1e" 
+                             alt="AI and machine learning interface with neural network visualization and data patterns" 
+                             class="w-12 h-12 rounded-lg object-cover"
+                             onerror="this.src='https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                        <div>
+                            <h3 class="font-semibold text-primary">AI for Design</h3>
+                            <p class="text-sm text-text-secondary">Stanford Online</p>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <div class="bg-gray-50 rounded-lg p-3">
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="text-sm font-medium text-primary">Week 3 of 8</span>
+                                <span class="text-sm text-text-secondary">37%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-1.5">
+                                <div class="bg-warning h-1.5 rounded-full" style="width: 37%"></div>
+                            </div>
+                        </div>
+                        
+                        <p class="text-sm text-text-secondary">
+                            Currently exploring machine learning applications in design automation and user experience personalization.
+                        </p>
+                        
+                        <div class="text-xs text-text-secondary">
+                            Next session: Oct 17, 2025 • 7:00 PM EST
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Current Reading -->
+                <div class="card">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="https://images.unsplash.com/photo-1591951425328-48c1fe7179cd" 
+                             alt="Open book with pages fanned out showing text and knowledge acquisition concept" 
+                             class="w-12 h-12 rounded-lg object-cover"
+                             onerror="this.src='https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;">
+                        <div>
+                            <h3 class="font-semibold text-primary">The Design of Everyday Things</h3>
+                            <p class="text-sm text-text-secondary">Don Norman</p>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <div class="bg-gray-50 rounded-lg p-3">
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="text-sm font-medium text-primary">Chapter 4 of 7</span>
+                                <span class="text-sm text-text-secondary">57%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-1.5">
+                                <div class="bg-accent h-1.5 rounded-full" style="width: 57%"></div>
+                            </div>
+                        </div>
+                        
+                        <p class="text-sm text-text-secondary">
+                            Re-reading this classic to deepen understanding of affordances and signifiers in digital interfaces.
+                        </p>
+                        
+                        <div class="text-xs text-text-secondary">
+                            Reading goal: 2 chapters per week
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Skill Development -->
+                <div class="card">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <img src="https://images.unsplash.com/photo-1695070534772-b3db40410818" 
+                             alt="Code editor screen showing HTML, CSS and JavaScript development environment" 
+                             class="w-12 h-12 rounded-lg object-cover"
+                             onerror="this.src='https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;">
+                        <div>
+                            <h3 class="font-semibold text-primary">Advanced Prototyping</h3>
+                            <p class="text-sm text-text-secondary">Framer & React</p>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <div class="bg-gray-50 rounded-lg p-3">
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="text-sm font-medium text-primary">Practice Project</span>
+                                <span class="text-sm text-text-secondary">80%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-1.5">
+                                <div class="bg-success h-1.5 rounded-full" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        
+                        <p class="text-sm text-text-secondary">
+                            Building interactive prototypes with real data integration to bridge design-development gap.
+                        </p>
+                        
+                        <div class="text-xs text-text-secondary">
+                            Target completion: Oct 22, 2025
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Real-time Integrations -->
+    <section class="py-8 px-6 lg:px-8 bg-surface">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-primary mb-8">Live Activity Feed</h2>
+            
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Now Playing -->
+                <div class="card">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <svg class="w-8 h-8 text-success" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/>
+                        </svg>
+                        <div>
+                            <h3 class="font-semibold text-primary">Currently Playing</h3>
+                            <p class="text-sm text-text-secondary">Spotify Integration</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center space-x-4">
+                        <img src="https://images.unsplash.com/photo-1636226570637-3fbda7ca09dc" 
+                             alt="Abstract music visualization with sound waves and audio equipment in modern studio setting" 
+                             class="w-16 h-16 rounded-lg object-cover"
+                             onerror="this.src='https://images.pexels.com/photos/164938/pexels-photo-164938.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;">
+                        <div class="flex-1">
+                            <h4 class="font-medium text-primary">Focus Flow</h4>
+                            <p class="text-sm text-text-secondary">Deep Work Playlist</p>
+                            <div class="flex items-center space-x-2 mt-2">
+                                <div class="w-2 h-2 bg-success rounded-full animate-pulse"></div>
+                                <span class="text-xs text-success">Playing now</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Recent Activity -->
+                <div class="card">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                        <div>
+                            <h3 class="font-semibold text-primary">Recent Activity</h3>
+                            <p class="text-sm text-text-secondary">Professional Updates</p>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-2 h-2 bg-accent rounded-full mt-2"></div>
+                            <div>
+                                <p class="text-sm text-primary">Published article on Medium</p>
+                                <p class="text-xs text-text-secondary">2 hours ago</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-3">
+                            <div class="w-2 h-2 bg-success rounded-full mt-2"></div>
+                            <div>
+                                <p class="text-sm text-primary">Completed user interview session</p>
+                                <p class="text-xs text-text-secondary">4 hours ago</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-3">
+                            <div class="w-2 h-2 bg-warning rounded-full mt-2"></div>
+                            <div>
+                                <p class="text-sm text-primary">Updated design system documentation</p>
+                                <p class="text-xs text-text-secondary">Yesterday</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Availability Calendar -->
+    <section class="py-8 px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-primary mb-8">Availability & Opportunities</h2>
+            
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Opportunity Types -->
+                <div class="lg:col-span-2 space-y-6">
+                    <div class="card">
+                        <h3 class="font-semibold text-primary mb-4">Open to Opportunities</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between p-4 bg-success/5 rounded-lg border border-success/20">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-3 h-3 bg-success rounded-full"></div>
+                                    <div>
+                                        <h4 class="font-medium text-primary">Full-time Roles</h4>
+                                        <p class="text-sm text-text-secondary">Senior Product Designer positions</p>
+                                    </div>
+                                </div>
+                                <span class="text-sm font-medium text-success">Available</span>
+                            </div>
+                            
+                            <div class="flex items-center justify-between p-4 bg-accent/5 rounded-lg border border-accent/20">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-3 h-3 bg-accent rounded-full"></div>
+                                    <div>
+                                        <h4 class="font-medium text-primary">Consulting Projects</h4>
+                                        <p class="text-sm text-text-secondary">3-6 month engagements</p>
+                                    </div>
+                                </div>
+                                <span class="text-sm font-medium text-accent">Available</span>
+                            </div>
+                            
+                            <div class="flex items-center justify-between p-4 bg-warning/5 rounded-lg border border-warning/20">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-3 h-3 bg-warning rounded-full"></div>
+                                    <div>
+                                        <h4 class="font-medium text-primary">Speaking Engagements</h4>
+                                        <p class="text-sm text-text-secondary">Design conferences & workshops</p>
+                                    </div>
+                                </div>
+                                <span class="text-sm font-medium text-warning">Limited</span>
+                            </div>
+                            
+                            <div class="flex items-center justify-between p-4 bg-gray-50 rounded-lg border border-gray-200">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-3 h-3 bg-gray-400 rounded-full"></div>
+                                    <div>
+                                        <h4 class="font-medium text-primary">Mentoring</h4>
+                                        <p class="text-sm text-text-secondary">1:1 design career guidance</p>
+                                    </div>
+                                </div>
+                                <span class="text-sm font-medium text-gray-500">Waitlist</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Preferences -->
+                <div class="space-y-6">
+                    <div class="card">
+                        <h3 class="font-semibold text-primary mb-4">Best Contact Times</h3>
+                        
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-text-secondary">Monday - Friday</span>
+                                <span class="text-sm font-medium text-primary">9 AM - 6 PM EST</span>
+                            </div>
+                            
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-text-secondary">Response Time</span>
+                                <span class="text-sm font-medium text-success">Within 24 hours</span>
+                            </div>
+                            
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-text-secondary">Preferred Method</span>
+                                <span class="text-sm font-medium text-primary">Email</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 pt-4 border-t border-border">
+                            <a href="mailto:hello@thinkingresume.com" class="btn-primary w-full text-center">
+                                Start Conversation
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Status Notifications -->
+                    <div class="card">
+                        <h3 class="font-semibold text-primary mb-4">Status Updates</h3>
+                        <p class="text-sm text-text-secondary mb-4">
+                            Get notified when my availability changes or new projects begin.
+                        </p>
+                        
+                        <div class="space-y-3">
+                            <input type="email" placeholder="your@email.com" class="input-field">
+                            <button class="btn-secondary w-full">Subscribe to Updates</button>
+                        </div>
+                        
+                        <p class="text-xs text-text-secondary mt-3">
+                            Low-frequency updates. Unsubscribe anytime.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 lg:px-8 border-t border-border">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                <div class="flex items-center space-x-4">
+                    <svg class="w-6 h-6 text-accent" viewBox="0 0 32 32" fill="currentColor">
+                        <path d="M16 2L20 10L28 10L22 16L24 24L16 20L8 24L10 16L4 10L12 10L16 2Z"/>
+                    </svg>
+                    <span class="text-primary font-medium">Thinking Resume</span>
+                </div>
+                
+                <div class="flex items-center space-x-6">
+                    <a href="https://linkedin.com" class="text-text-secondary hover:text-accent transition-smooth">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clip-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                    <a href="https://twitter.com" class="text-text-secondary hover:text-accent transition-smooth">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84"></path>
+                        </svg>
+                    </a>
+                    <a href="https://dribbble.com" class="text-text-secondary hover:text-accent transition-smooth">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 0C4.477 0 0 4.484 0 10.017 0 15.55 4.477 20.034 10 20.034s10-4.484 10-10.017C20 4.484 15.523 0 10 0zm6.823 4.823c1.187 1.448 1.907 3.3 1.907 5.335 0 .19-.008.378-.024.565a16.074 16.074 0 00-4.287-.585c-.154-.354-.32-.703-.5-1.047 1.65-.693 2.904-1.618 2.904-4.268zm-1.178-1.471c0 2.139-1.042 2.9-2.441 3.487a25.617 25.617 0 00-2.395-3.84C11.81 2.67 13.17 2.5 14.645 3.352zm-5.489-.581c.808.045 1.573.25 2.25.581a23.92 23.92 0 012.188 3.51c-1.617.66-3.394 1.017-5.438 1.017-.384 0-.76-.01-1.128-.03.154-1.66.65-3.203 1.428-4.578.233-.4.483-.785.7-1.5zm-2.4 5.647c.4.024.808.037 1.225.037 1.808 0 3.37-.3 4.813-.85.134.267.26.538.378.814-1.729.49-3.06 1.47-3.06 3.732 0 .38.037.75.108 1.108a8.663 8.663 0 01-3.464-4.841zm4.378 6.05c-.053-.267-.08-.544-.08-.827 0-1.568.9-2.257 2.378-2.644a21.84 21.84 0 011.585 3.084c-.708.3-1.473.46-2.278.46-.54 0-1.065-.025-1.605-.073zm3.955-.46a23.69 23.69 0 00-1.392-2.647c1.215.154 2.31.4 3.26.73a8.214 8.214 0 01-1.868 1.917z" clip-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                </div>
+                
+                <div class="text-sm text-text-secondary">
+                    © 2025 Thinking Resume. All rights reserved.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Real-time updates simulation
+        function updateTimestamp() {
+            const now = new Date();
+            const timeString = now.toLocaleString('en-US', {
+                month: 'short',
+                day: 'numeric',
+                year: 'numeric',
+                hour: 'numeric',
+                minute: '2-digit',
+                hour12: true
+            });
+            
+            const timestampElements = document.querySelectorAll('[data-timestamp]');
+            timestampElements.forEach(element => {
+                element.textContent = timeString;
+            });
+        }
+
+        // Update progress bars with animation
+        function animateProgressBars() {
+            const progressBars = document.querySelectorAll('[style*="width:"]');
+            progressBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0%';
+                setTimeout(() => {
+                    bar.style.transition = 'width 1s ease-out';
+                    bar.style.width = width;
+                }, 100);
+            });
+        }
+
+        // Simulate real-time activity updates
+        function updateActivityFeed() {
+            const activities = [
+                { text: 'Published article on Medium', time: '2 hours ago', color: 'accent' },
+                { text: 'Completed user interview session', time: '4 hours ago', color: 'success' },
+                { text: 'Updated design system documentation', time: 'Yesterday', color: 'warning' }
+            ];
+            
+            // Randomly update activity times
+            const activityElements = document.querySelectorAll('.flex.items-start.space-x-3');
+            activityElements.forEach((element, index) => {
+                if (activities[index]) {
+                    const timeElement = element.querySelector('.text-xs.text-text-secondary');
+                    if (timeElement && Math.random() > 0.7) {
+                        timeElement.textContent = activities[index].time;
+                    }
+                }
+            });
+        }
+
+        // Initialize animations on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(animateProgressBars, 500);
+            
+            // Update activity feed every 30 seconds
+            setInterval(updateActivityFeed, 30000);
+            
+            // Update timestamps every minute
+            setInterval(updateTimestamp, 60000);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('shadow-card');
+            } else {
+                nav.classList.remove('shadow-card');
+            }
+        });
+
+        // Email subscription form handling
+        const subscribeForm = document.querySelector('input[type="email"]');
+        const subscribeBtn = document.querySelector('.btn-secondary');
+        
+        if (subscribeBtn) {
+            subscribeBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const email = subscribeForm.value;
+                if (email) {
+                    subscribeBtn.textContent = 'Subscribed!';
+                    subscribeBtn.classList.add('bg-success', 'text-white');
+                    setTimeout(() => {
+                        subscribeBtn.textContent = 'Subscribe to Updates';
+                        subscribeBtn.classList.remove('bg-success', 'text-white');
+                    }, 2000);
+                }
+            });
+        }
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>
