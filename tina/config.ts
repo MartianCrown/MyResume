@@ -1,3 +1,4 @@
+// sync-trigger
 import { defineConfig } from "tinacms";
 
 // Preserve dynamic branch detection
